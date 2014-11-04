@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# save repository names
+# github username
 GITHUBUSER="$1"
 
 REPONAMES="$(curl -u $GITHUBUSER 'https://api.github.com/users/cptaffe/repos' | grep "\"name\": " | sed s/"\"name\": \"\(.*\)\""/"\1"/ | sed s/,//)"
